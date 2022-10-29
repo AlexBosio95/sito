@@ -1,9 +1,12 @@
 <template>
-  <Tutorial/>
+    <Tutorial />
 </template>
 
 <script>
+import Tutorial from '~/components/Tutorial.vue'
+
 export default {
-  name: 'IndexPage'
+  components: { Tutorial },
+  name: 'IndexPage',
 }
 </script>
