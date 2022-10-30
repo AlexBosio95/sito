@@ -1,6 +1,5 @@
 <template>
-    <div class="social" v-scrollanimation>
-        <a href="https://www.instagram.com/alexbosio95/?hl=it" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <div class="social">
         <a href="https://www.linkedin.com/in/alex-bosio-dev" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://github.com/AlexBosio95" target="_blank"><i class="fa-brands fa-github"></i></a>
     </div>

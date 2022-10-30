@@ -1,7 +1,7 @@
 <template>
     <div class="menu">
         <div class="big-menu">
-            <a v-for="(item, index) in dataMenu" :key="index" @click.prevent="changeColor(index)" :class="{'active' : item.active}" :href="item.link"><i :class="item.logo"></i></a>
+            <a v-for="(item, index) in dataMenu" :key="index" @click="changeColor(index)" :class="{'active' : item.active}" :href="item.link"><i :class="item.logo"></i></a>
         </div>
     </div>
 </template>

@@ -1,17 +1,17 @@
 <template>
 <div class="skills">
-    <TitleSection class="bigTitle" v-scrollanimation
+    <TitleSection class="bigTitle"
     :dataTitle= 'dataTitle' 
     />
 
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2">
 
-            <BoxCard v-scrollanimation
+            <BoxCard
             :dataCard = 'arrayFront'
             :dataBoxCard = 'dataFCard'/>
 
-            <BoxCard v-scrollanimation
+            <BoxCard
             :dataCard = 'arrayBack'
             :dataBoxCard = 'dataBCard'/>
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a @click.prevent :href="url"><button :class="getTypeButton(type)">{{text}}</button></a>
+        <a :href="url"><button :class="getTypeButton(type)">{{text}}</button></a>
     </div>
 </template>
 

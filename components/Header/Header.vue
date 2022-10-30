@@ -1,5 +1,5 @@
 <template>
-    <div class="jumbo-section">
+    <div class="jumbo-section" id="home">
         <Menu />
         <div class="container">
             <div class="text-center d-flex justify-content-center">

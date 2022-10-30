@@ -2,28 +2,28 @@
     <div class="about-me" id="about-me">
         <div class="mb-5">
 
-            <TitleSection v-scrollanimation class="title-section"
+            <TitleSection class="title-section"
             :dataTitle = 'dataTitle'/>
 
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col d-flex justify-content-center align-items-center">
-                    <BoxImage v-scrollanimation/>
+                    <BoxImage/>
                 </div>
 
                 <div class="col">
                     <div class="box-container">
 
-                        <BoxInfo v-for="(data, index) in dataBox" :key="index" v-scrollanimation
+                        <BoxInfo v-for="(data, index) in dataBox" :key="index"
                             :title = 'data.title'
                             :logo = 'data.logo'
                             :data=  "data.data"
                             :myGit = 'myGit'
                         />
 
-                        <Paragraf v-scrollanimation
+                        <Paragraf
                             :dataParagraf = 'dataParagraf'/>
 
-                        <SquareButton v-for="button in ButtonData" :key="button.id" v-scrollanimation
+                        <SquareButton v-for="button in ButtonData" :key="button.id"
                             :text= 'button.text'
                             :type= 'button.type'
                             :url= 'button.url'
