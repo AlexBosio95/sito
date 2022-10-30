@@ -12,7 +12,8 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css', integrity:"sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==", crossorigin:"anonymous", referrerpolicy:"no-referrer"}
     ]
   },
 
@@ -39,6 +40,26 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+
+    ['nuxt-i18n', {
+      locales: [
+        {
+          name: 'Italiano',
+          code: 'it',
+          iso: 'it-IT',
+          file: 'it-IT.js'
+        },
+        {
+          name: 'English',
+          code: 'en',
+          iso: 'en-US',
+          file: 'en-US.js'
+        },
+    ],
+      lazy: true,
+      langDir: 'lang/',
+      defaultLocale: 'it'
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

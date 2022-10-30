@@ -1,0 +1,148 @@
+<template>
+    <div class="about-me" id="about-me">
+        <div class="mb-5">
+
+            <TitleSection v-scrollanimation class="title-section"
+            :dataTitle = 'dataTitle'/>
+
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col d-flex justify-content-center align-items-center">
+                    <BoxImage v-scrollanimation/>
+                </div>
+
+                <div class="col">
+                    <div class="box-container">
+
+                        <BoxInfo v-for="(data, index) in dataBox" :key="index" v-scrollanimation
+                            :title = 'data.title'
+                            :logo = 'data.logo'
+                            :data=  "data.data"
+                            :myGit = 'myGit'
+                        />
+
+                        <Paragraf v-scrollanimation
+                            :dataParagraf = 'dataParagraf'/>
+
+                        <SquareButton v-for="button in ButtonData" :key="button.id" v-scrollanimation
+                            :text= 'button.text'
+                            :type= 'button.type'
+                            :url= 'button.url'
+                        />
+                </div>
+            </div>
+        </div>      
+    </div>
+
+
+        
+    </div>
+</template>
+
+<script>
+import SquareButton from '../Common/SquareButton.vue'
+import BoxInfo from '../Common/BoxInfo.vue'
+import TitleSection from '../Common/TitleSection.vue'
+import BoxImage from './BoxImage.vue'
+import Paragraf from '../Common/Paragraf.vue'
+
+export default {
+    components: { BoxInfo, SquareButton, TitleSection, BoxImage, Paragraf },
+    data: function(){
+        return{
+            dataBox:[
+                {
+                    title: 'Experience',
+                    logo: 'fa-solid fa-briefcase',
+                    data: '8 Years Working'
+                },
+                {
+                    title: 'Projects',
+                    logo: 'fa-solid fa-bars-progress',
+                    data: 'Github'
+                },
+                {
+                    title: 'Study',
+                    logo: 'fa-solid fa-book',
+                    data: 'Boolean Certificate'
+                }
+            ],
+            
+            ButtonData: [ 
+                {
+                id: 3,
+                text: 'My Skills',
+                type: 'fill',
+                url: '#skill',
+                }
+            ],
+
+            dataTitle:{
+                title: 'About me',
+                subtitle: 'My intro'
+            },
+
+            dataParagraf: 'I am a young Full Stack Web Developer, I love technology and my passion is programming. I am looking for new experiences that allow me to grow professionally.'
+
+        }
+    },
+
+    props:{
+        myGit: Object,
+    }
+
+}
+</script>
+
+
+<style lang="scss" scoped>
+
+@import '@/style/variables.scss';
+
+    .about-me{
+        height: 100%;
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .title-section{
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .box-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+
+
+        }
+    }
+
+
+    @media all and (min-width: 992px) {
+        .about-me{
+            height: 100vh;
+            padding-top: 0rem;
+
+            .title-section{
+                margin-bottom: 4rem;
+            }
+
+            .box-container{
+                justify-content: start;
+                width: 80%;
+
+                p{
+                    text-align: left;
+                }
+            }
+    }
+
+
+    }
+
+</style>
