@@ -1,9 +1,10 @@
 <template>
     <div class="jumbo-section" id="home">
         <Menu />
+
+
         <div class="container">
             <div class="text-center d-flex justify-content-center">
-                
                 <div class="box-text">
                     <h6>{{$t('header.topTitle')}}</h6>
                     <h1 class="fw-bold">{{$t('header.title')}}</h1>
@@ -27,7 +28,9 @@
             </div>
 
             <div class="name">
-                <h5>{{$t('header.name')}}</h5>
+                <nuxt-link v-for="lang in availableLang" :key="lang.code" :to="switchLocalePath(lang.code)">
+                    {{lang.name}}
+                </nuxt-link>
             </div>
 
             <Social class="social"/>
@@ -49,6 +52,12 @@ export default {
         Social 
     },
 
+    computed:{
+        availableLang(){
+            return this.$i18n.locales.filter( i => i.code !== this.$i18n.locale);
+        }
+    },
+
     props:{
         dataMenu : Array,
     },
@@ -57,13 +66,13 @@ export default {
             ButtonData: [ 
                 {
                 id: 0,
-                text: 'Download CV',
+                text: this.$t('header.buttonDownload'),
                 type: 'standard',
                 url: 'https://www.canva.com/design/DAFHzCv3a1Q/0HVBTenwv1gujFO_snMY3g/view?utm_content=DAFHzCv3a1Q&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink',
                 },
                 {
                 id: 1,
-                text: 'About me',
+                text: this.$t('header.buttonAboutme'),
                 type: 'fill',
                 url: '#about-me',
                 }

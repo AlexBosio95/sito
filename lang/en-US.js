@@ -5,6 +5,9 @@ export default{
     header: {
         topTitle: 'Hello I\'m',
         title: 'Alex Bosio',
-        subTitle: 'Full Stack Web Developer'
+        subTitle: 'Full Stack Web Developer',
+        name: 'Alex',
+        buttonDownload: 'Download CV',
+        buttonAboutme: 'About me'
     }
 }

@@ -19,6 +19,8 @@ import axios from 'axios';
 export default {
   name: 'IndexPage',
   components: { Footer, Header, Main },
+
+  
   data: function(){
     return{
       myGit: {},

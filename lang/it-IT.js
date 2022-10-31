@@ -3,9 +3,11 @@ export default{
         title: 'il mio titolo'
     },
     header: {
-        topTitle: 'Hello I\'m',
+        topTitle: 'Ciao sono,',
         title: 'Alex Bosio',
-        subTitle: 'Full Stack Web Developer',
-        name: 'Alex'
+        subTitle: 'Sono uno sviluppatore Full Stack',
+        name: 'Alex',
+        buttonDownload: 'Scarica CV',
+        buttonAboutme: 'Su di me',
     }
 }
