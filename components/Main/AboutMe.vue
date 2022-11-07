@@ -51,37 +51,37 @@ export default {
         return{
             dataBox:[
                 {
-                    title: 'Experience',
+                    title: this.$t('aboutMe.BoxOneTitle'),
                     logo: 'fa-solid fa-briefcase',
-                    data: '8 Years Working'
+                    data: this.$t('aboutMe.BoxOneData')
                 },
                 {
-                    title: 'Projects',
+                    title: this.$t('aboutMe.BoxTwoTitle'),
                     logo: 'fa-solid fa-bars-progress',
-                    data: 'Github'
+                    data: this.$t('aboutMe.BoxTwoData')
                 },
                 {
-                    title: 'Study',
+                    title: this.$t('aboutMe.BoxThreeTitle'),
                     logo: 'fa-solid fa-book',
-                    data: 'Boolean Certificate'
+                    data: this.$t('aboutMe.BoxThreeData')
                 }
             ],
             
             ButtonData: [ 
                 {
                 id: 3,
-                text: 'My Skills',
+                text: this.$t('aboutMe.ButtonText'),
                 type: 'fill',
                 url: '#skill',
                 }
             ],
 
             dataTitle:{
-                title: 'About me',
-                subtitle: 'My intro'
+                title: this.$t('aboutMe.title'),
+                subtitle: this.$t('aboutMe.subTitle')
             },
 
-            dataParagraf: 'I am a young Full Stack Web Developer, I love technology and my passion is programming. I am looking for new experiences that allow me to grow professionally.'
+            dataParagraf: this.$t('aboutMe.dataParagraf')
 
         }
     },

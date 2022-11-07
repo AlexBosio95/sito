@@ -28,8 +28,6 @@ export default {
 
             this.data.forEach(element => {
 
-                console.log(element.counterBar);
-
                 setInterval(() => {
                     
                     if (element.counterBar < element.progress) {

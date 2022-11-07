@@ -110,8 +110,8 @@ export default {
                 // }
             ],
             dataTitle:{
-                title: 'My Skills',
-                subtitle: 'Experience'
+                title: this.$t('skills.title'),
+                subtitle: this.$t('skills.subTitle'),
             },
 
             dataFCard: 'Frontend',
@@ -133,8 +133,6 @@ export default {
                     }
                 }
             });
-                console.log(this.arrayFront)
-                console.log(this.arrayBack)
         }
     },
     created(){

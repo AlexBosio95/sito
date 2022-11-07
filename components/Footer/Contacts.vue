@@ -24,43 +24,43 @@ export default {
     data: function(){
         return{
             dataTitle:{
-                title: 'I\'m a Supporter',
-                subtitle: 'My personality'
+                title: this.$t('footer.title'),
+                subtitle: this.$t('footer.subTitle')
             },
             data: [
                 {
-                    title: 'Mind',
+                    title: this.$t('footer.MindTitle'),
                     progress: '54',
-                    textStart: 'Introverted',
-                    textEnd: 'Extraverted',
+                    textStart: this.$t('footer.MindElementLeft'),
+                    textEnd: this.$t('footer.MindElementRight'),
                     counterBar: 0
                 },
                 {
-                    title: 'Energy',
+                    title: this.$t('footer.EnergyTitle'),
                     progress: '66',
-                    textStart: 'Intuitive',
-                    textEnd: 'Observant',
+                    textStart: this.$t('footer.EnergyElementLeft'),
+                    textEnd: this.$t('footer.EnergyElementRight'),
                     counterBar: 0
                 },
                 {
-                    title: 'Nature',
+                    title: this.$t('footer.NatureTitle'),
                     progress: '61',
-                    textStart: 'Feeling',
-                    textEnd: 'Thinking',
+                    textStart: this.$t('footer.NatureElementLeft'),
+                    textEnd: this.$t('footer.NatureElementRight'),
                     counterBar: 0
                 },
                 {
-                    title: 'Tactics',
+                    title: this.$t('footer.TacticsTitle'),
                     progress: '75',
-                    textStart: 'Judging',
-                    textEnd: 'Prospecting',
+                    textStart: this.$t('footer.TacticsElementLeft'),
+                    textEnd: this.$t('footer.TacticsElementRight'),
                     counterBar: 0
                 },
                 {
-                    title: 'Identity',
+                    title: this.$t('footer.IdentityTitle'),
                     progress: '56',
-                    textStart: 'Assertive',
-                    textEnd: 'Turbulent',
+                    textStart: this.$t('footer.IdentityElementLeft'),
+                    textEnd: this.$t('footer.IdentityElementRight'),
                     counterBar: 0
                 }
             ]
