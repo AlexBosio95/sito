@@ -145,7 +145,7 @@ export default {
 <style scoped lang="scss">
 
     .skills{
-        height: 1000%;
+        height: 100%;
 
         .bigTitle{
             text-align: center;

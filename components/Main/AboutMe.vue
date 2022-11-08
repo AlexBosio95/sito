@@ -99,6 +99,7 @@ export default {
 @import '@/style/variables.scss';
 
     .about-me{
+        overflow: hidden;
         height: 100%;
         padding-top: 2rem;
         display: flex;
@@ -118,15 +119,14 @@ export default {
             flex-wrap: wrap;
             width: 100%;
 
-
         }
     }
 
 
     @media all and (min-width: 992px) {
         .about-me{
-            height: 100vh;
             padding-top: 0rem;
+            height: 100vh;
 
             .title-section{
                 margin-bottom: 4rem;

@@ -19,7 +19,7 @@ export default {
         display: flex;
         justify-content: center;
         background-color: $Graylight;
-        margin: 2rem auto;
+        margin: 1rem auto;
         width: 50%;
         border-radius: 0.5rem;
 

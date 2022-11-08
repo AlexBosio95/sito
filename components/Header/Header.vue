@@ -114,8 +114,8 @@ export default {
             border-radius: 9rem 9rem 0 0;
 
             img{
-                height: 14rem;
-                margin: 4rem 2rem 6.5rem 2rem;
+                height: calc(100vh / 3.8);
+                margin: 1rem 2rem 6.5rem 2rem;
             }
         }
 
