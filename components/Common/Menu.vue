@@ -33,6 +33,13 @@ export default {
                 },
 
                 {
+                    text: 'Project', 
+                    active: false,
+                    logo: 'fa-solid fa-briefcase',
+                    link: '#projects',
+                },
+
+                {
                     text: 'personality',
                     active: false,
                     logo: 'fa-solid fa-chart-bar',

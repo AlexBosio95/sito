@@ -64,7 +64,6 @@ export default {
         }
     }
 
-
     .title{
         color: $White;
         text-align: center;
@@ -74,17 +73,6 @@ export default {
     .sub-bar{
         text-transform: uppercase;
         color: $GraylightXL;
-    }
-
-    .before-enter{
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 2s ease-out;
-    }
-
-    .enter{
-        opacity: 1;
-        transform: translateY(0px);
     }
 
 

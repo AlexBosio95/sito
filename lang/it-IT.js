@@ -36,6 +36,19 @@ export default{
         subTitle: 'Esperienza',
     },
 
+    Projects: {
+
+        ProjectDescriptionOne: 'È un progetto che permette a chiunque di trovare un garage in affitto. Abbiamo creato tutta la parte di back office per la gestione dei propri garage.',
+
+        ProjectDescriptionTwo: 'Questo è stato il mio progetto di completamento del fronend nel quale ho dovuto inserire tutte le capacità imparate fino a quel momento. (HTML/CSS/JS) VueCli',
+
+        ProjectDescriptionThree: 'In questo progetto ci è stato chiesto di riprodurre il noto sito di Netflix, interfacciandoci con API per il recupero di dati.',
+
+        ProjectDescriptionFour: 'In questo progetto è stato fatto un focus su javascript. Grazie a questo esercizio ho capito il reale potenziale di questo linguaggio.',
+
+
+    },
+
     footer: {
 
         title: 'Sostenitore',

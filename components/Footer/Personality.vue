@@ -2,11 +2,11 @@
 <div class="container">
 
     <div class="contacts">
-        <div class="py-5">
+        <div class="padding-container">
             <TitleSection class="title-section"
             :dataTitle = 'dataTitle' />
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mp">
                 <ProgessBar 
                 :data = 'data' 
                 data-aos="fade-up" data-aos-duration="1800"/>
@@ -84,6 +84,10 @@ export default {
         margin-bottom: 2rem;
     }
 
+    .padding-container{
+        padding-bottom: 8rem;
+    }
+
 }
 
     @media all and (min-width: 992px) {
@@ -92,6 +96,10 @@ export default {
 
             .title-section{
                 margin-bottom: 4rem;
+            }
+
+            .padding-container{
+                padding: 3rem 0;
             }
         }
 
