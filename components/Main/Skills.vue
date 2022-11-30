@@ -100,14 +100,6 @@ export default {
                     imgUrl: 'fa-brands fa-bootstrap',
                     group: 'Frontend'
                 },
-                
-                // {
-                //     id: 10,
-                //     title: 'Python',
-                //     type: 'Language',
-                //     imgUrl: 'python.png',
-                //     group: 'Udemy'
-                // }
             ],
             dataTitle:{
                 title: this.$t('skills.title'),
@@ -124,7 +116,7 @@ export default {
     methods:{
         getArrayGroup(){
             this.dataCard.forEach(element => {
-                if (element.group != null || element.grou != '') {
+                if (element.group != null || element.group != '') {
                     
                     if (element.group == 'Frontend') {
                         this.arrayFront.push(element)

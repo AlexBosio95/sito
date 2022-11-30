@@ -3,12 +3,13 @@
 
     <div class="contacts">
         <div class="py-5">
-            <TitleSection v-scrollanimation class="title-section"
+            <TitleSection class="title-section"
             :dataTitle = 'dataTitle' />
 
             <div class="row justify-content-center">
-                    <ProgessBar v-scrollanimation 
-                    :data = 'data' />
+                <ProgessBar 
+                :data = 'data' 
+                data-aos="fade-up" data-aos-duration="1800"/>
             </div>
         </div>
     </div>

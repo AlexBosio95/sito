@@ -1,13 +1,15 @@
 <template>
     <div class="col">
         <div class="box-card">
-        <h3 class="title" :class="getFont(dataBoxCard)">{{dataBoxCard}}</h3>
+        <h3 data-aos="fade-up" data-aos-duration="800" class="title" :class="getFont(dataBoxCard)">{{dataBoxCard}}</h3>
             <div class="card-container">
                 <Card v-for="card in dataCard" :key="card.id" 
                     :title = 'card.title'
                     :imgUrl = 'card.imgUrl'
                     :type = 'card.type'
                     :group = 'card.group'
+
+                    data-aos="fade-up" data-aos-duration="1500"
                 />
             </div>
         </div>

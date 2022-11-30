@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <h6 class="subtitle">{{dataTitle.subtitle}}</h6>
-        <h3 class="title">{{dataTitle.title}}</h3>
+    <div >
+        <h6 data-aos="fade-up" data-aos-duration="600" class="subtitle">{{dataTitle.subtitle}}</h6>
+        <h3 data-aos="fade-up" data-aos-duration="800" class="title">{{dataTitle.title}}</h3>
     </div>
 </template>
 

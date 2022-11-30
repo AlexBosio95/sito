@@ -1,5 +1,6 @@
 <template>
   <div>
+      <Menu />
       <Header />
       <Main 
       :myGit = 'myGit'
@@ -13,12 +14,14 @@
 import Header from '~/components/Header/Header.vue'
 import Main from '~/components/Main/Main.vue'
 import Footer from '~/components/Footer/Footer.vue'
+import Menu from '~/components/Common/Menu.vue'
+
 
 import axios from 'axios';
 
 export default {
   name: 'IndexPage',
-  components: { Footer, Header, Main },
+  components: { Footer, Header, Main, Menu },
 
   
   data: function(){
@@ -34,18 +37,13 @@ export default {
       .then((results) => {
         this.myGit = results.data
       })
-    },
-    getGitRepo(){
-      axios.get('https://api.github.com/users/AlexBosio95/repos')
-      .then((results) => {
-        this.myGitRepo = results.data
+      .catch((error) => {
+        console.log(error)
       })
-
     }
   },
   created(){
     this.getMyGithub()
-    this.getGitRepo()
   }
 }
 </script>

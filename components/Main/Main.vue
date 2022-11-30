@@ -6,22 +6,25 @@
 
     <Skills id="skill"/>
 
+    <Projects />
+
 </main>
 </template>
 
 <script>
 import Skills from './Skills.vue';
 import AboutMe from './AboutMe.vue';
+import Projects from './Projects.vue';
 
 export default {
 
     components:{
         Skills,
         AboutMe,
+        Projects,
     },
     props:{
         myGit: Object,
-        myGitRepo: Array,
     }, 
     
 }

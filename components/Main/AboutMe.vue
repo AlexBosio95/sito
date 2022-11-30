@@ -7,7 +7,7 @@
 
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col d-flex justify-content-center align-items-center">
-                    <BoxImage/>
+                    <BoxImage data-aos="fade-right" data-aos-duration="1500"/>
                 </div>
 
                 <div class="col">
@@ -18,15 +18,20 @@
                             :logo = 'data.logo'
                             :data=  "data.data"
                             :myGit = 'myGit'
+
+                            data-aos="fade-left" data-aos-duration="1500"
                         />
 
                         <Paragraf
-                            :dataParagraf = 'dataParagraf'/>
+                            :dataParagraf = 'dataParagraf'
+                            data-aos="fade-up" data-aos-duration="800"/>
 
                         <SquareButton v-for="button in ButtonData" :key="button.id"
                             :text= 'button.text'
                             :type= 'button.type'
                             :url= 'button.url'
+
+                            data-aos="fade-up" data-aos-duration="800"
                         />
                 </div>
             </div>

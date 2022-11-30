@@ -1,16 +1,16 @@
 <template>
     <footer>
-        <Contacts id="personality"/>
+        <Personality id="personality"/>
     </footer>
 </template>
 
 <script>
-import Contacts from './Contacts.vue';
+import Personality from './Personality.vue';
 
 export default {
 
     components:{
-        Contacts,
+        Personality,
     }
 }
 </script>

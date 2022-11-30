@@ -1,37 +1,43 @@
 <template>
     <div class="jumbo-section" id="home">
-        <Menu />
+        
+        <div class="container">
+            <div class="lang-box">
+                <nuxt-link class="lang" v-for="lang in availableLang" :key="lang.code" :to="switchLocalePath(lang.code)">
+                    {{lang.name}}
+                </nuxt-link>
+            </div>
+        </div>
 
 
         <div class="container">
             <div class="text-center d-flex justify-content-center">
                 <div class="box-text">
-                    <h6>{{$t('header.topTitle')}}</h6>
-                    <h1 class="fw-bold">{{$t('header.title')}}</h1>
-                    <p >{{$t('header.subTitle')}}</p>
+                    <h6 data-aos="fade-up" data-aos-duration="800">{{$t('header.topTitle')}}</h6>
+                    <h1 data-aos="fade-up" data-aos-duration="1000" class="fw-bold">{{$t('header.title')}}</h1>
+                    <p data-aos="fade-up" data-aos-duration="1200">{{$t('header.subTitle')}}</p>
 
                     <div class="d-flex justify-content-center">
                         <SquareButton v-for="button in ButtonData" :key="button.id"
                         :text= 'button.text'
                         :type= 'button.type'
                         :url= 'button.url'
+
+                        data-aos="fade-up" data-aos-duration="1800"
                         />
+
                     </div>
 
                 </div>
 
-                <div class="image-profile ">
+                <div class="image-profile " data-aos="fade-up" data-aos-duration="1500">
                     <div class="bg-image">
                         <img src="@/assets/img/mypc.png" alt="">
                     </div>
                 </div>
             </div>
 
-            <div class="name">
-                <nuxt-link v-for="lang in availableLang" :key="lang.code" :to="switchLocalePath(lang.code)">
-                    {{lang.name}}
-                </nuxt-link>
-            </div>
+            
 
             <Social class="social"/>
 
@@ -121,10 +127,26 @@ export default {
 
     }
 
-    .name{
+    .lang-box{
         position: absolute;
         top: 1rem;
-        color: $Blue;
+        background-color: $Graylight;
+        padding: .5rem 1rem;
+        border-radius: 2rem;
+        
+
+        .lang{
+            color: $White;
+            text-decoration: none;
+        }
+
+        &:hover{
+            transform: scale(1.05);
+            transition: .5s ease-in-out;
+        }
+
+
+
     }
 
     .social{
