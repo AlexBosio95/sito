@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <Menu />
+  <div @scroll.passive="isOpen = false">
+      <Menu :isOpen = 'isOpen' @update:open='isOpen = $event'/>
       <Header />
       <Main 
       :myGit = 'myGit'
@@ -27,7 +27,8 @@ export default {
   data: function(){
     return{
       myGit: {},
-      myGitRepo: []
+      myGitRepo: [],
+      isOpen: false,
 
     }
   },
@@ -40,10 +41,17 @@ export default {
       .catch((error) => {
         console.log(error)
       })
+    },
+    changeOpen(){
+      this.isOpen = false
     }
+    
   },
   created(){
     this.getMyGithub()
+  },
+  mounted(){
+    window.addEventListener('scroll', this.changeOpen);
   }
 }
 </script>

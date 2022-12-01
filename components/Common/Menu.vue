@@ -1,5 +1,5 @@
 <template>
-<div class="menu-container">
+<div class="menu-container" :class="isOpen ? 'menu-m-open' : ''"  >
     
     <div class="menu" :class="isOpen ? 'menu-open' : ''">
 
@@ -8,7 +8,7 @@
             <a 
             class="icon"
             v-for="(item, index) in dataMenu" :key="index" 
-            @click="changeColor(index)" :class="{'active' : item.active, 'margin' : isOpen}" 
+            @click="changeColor(index); updateOpen()" :class="{'active' : item.active, 'margin' : isOpen}" 
             :href="item.link">
             <i :class="item.logo"></i>
             </a>
@@ -16,7 +16,7 @@
 
         <!-- Menu Closed -->
         <div class="small-menu" v-else>
-            <a class="icon" @click.prevent="isOpen = !isOpen"><i class="fa-solid fa-bars"></i></a>
+            <a class="icon" @click.prevent="updateOpen()"><i class="fa-solid fa-bars"></i></a>
         </div>
     </div>
 </div>
@@ -62,10 +62,11 @@ export default {
                     link: '#personality',
                 },
             ],
-
-            isOpen: false,
+            Open: false,
+            
         }
     },
+    props: { isOpen: Boolean},
     methods:{
         changeColor(currentindex){
 
@@ -75,7 +76,10 @@ export default {
 
             this.dataMenu[currentindex].active = true
 
-            this.isOpen = false
+        },
+        updateOpen(){
+            this.Open = true
+            this.$emit('update:open', this.Open)
         }
     }
 }
@@ -180,6 +184,20 @@ export default {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@media all and (max-width: 600px) {
+    .menu-container{
+        position: fixed;
+        z-index: 1;
+        bottom: 1rem;
+        left: 15%;
+
+    }
+
+    .menu-m-open{
+        left: 50%;
     }
 }
     

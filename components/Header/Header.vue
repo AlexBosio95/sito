@@ -4,7 +4,7 @@
         <div class="container">
             <div class="lang-box">
                 <nuxt-link class="lang" v-for="lang in availableLang" :key="lang.code" :to="switchLocalePath(lang.code)">
-                    {{lang.name}}
+                    <i class="fa-solid fa-earth-europe"></i> {{lang.name}}
                 </nuxt-link>
             </div>
         </div>
@@ -22,7 +22,7 @@
                         :text= 'button.text'
                         :type= 'button.type'
                         :url= 'button.url'
-
+                        
                         data-aos="fade-up" data-aos-duration="1800"
                         />
 
@@ -36,8 +36,6 @@
                     </div>
                 </div>
             </div>
-
-            
 
             <Social class="social"/>
 
@@ -82,7 +80,7 @@ export default {
                 type: 'fill',
                 url: '#about-me',
                 }
-            ] 
+            ],
         }
     }
 }
