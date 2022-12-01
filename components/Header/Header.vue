@@ -151,19 +151,25 @@ export default {
 
     .social{
         position: relative;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        animation-name: scale-up-center;
+        animation-duration: 1s;
+        animation-delay: 1s;
     }
 
 }
 
-    .before-enter{
+@keyframes scale-up-center {
+
+    from{
         opacity: 0;
-        transform: translateY(40px);
-        transition: all 1s ease-out;
     }
 
-    .enter{
+    to{
         opacity: 1;
-        transform: translateY(0px);
+    }
+
     }
 
     @media all and (min-width: 992px) {

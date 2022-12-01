@@ -1,9 +1,25 @@
 <template>
-    <div class="menu">
-        <div class="big-menu">
-            <a v-for="(item, index) in dataMenu" :key="index" @click="changeColor(index)" :class="{'active' : item.active}" :href="item.link"><i :class="item.logo"></i></a>
+<div class="menu-container">
+    
+    <div class="menu" :class="isOpen ? 'menu-open' : ''">
+
+        <!-- Menu Open -->
+        <div class="big-menu" v-if="isOpen">
+            <a 
+            class="icon"
+            v-for="(item, index) in dataMenu" :key="index" 
+            @click="changeColor(index)" :class="{'active' : item.active, 'margin' : isOpen}" 
+            :href="item.link">
+            <i :class="item.logo"></i>
+            </a>
+        </div>
+
+        <!-- Menu Closed -->
+        <div class="small-menu" v-else>
+            <a class="icon" @click.prevent="isOpen = !isOpen"><i class="fa-solid fa-bars"></i></a>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -45,8 +61,9 @@ export default {
                     logo: 'fa-solid fa-chart-bar',
                     link: '#personality',
                 },
-
             ],
+
+            isOpen: false,
         }
     },
     methods:{
@@ -57,6 +74,8 @@ export default {
             });
 
             this.dataMenu[currentindex].active = true
+
+            this.isOpen = false
         }
     }
 }
@@ -66,45 +85,103 @@ export default {
 
 @import '@/style/variables.scss';
 
+.menu-container{
+    position: fixed;
+    z-index: 1;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    
+
     .menu{
-        position: fixed;
-        z-index: 1;
+        padding: 1rem 2rem;
         background: rgba($Graylight, 0.8);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
-        bottom: 2rem;
-        left: 50%;
-        transform: translate(-50%);
-        padding: 1rem 2rem;
         border-radius: 5rem;
+        animation-name: scale-up-center;
+        animation-duration: 1s;
+
 
         .big-menu{
             display: flex;
-            width: 18rem;
             justify-content: space-between;
             align-items: center;
-
-                a{
-                color: $White;
-                text-decoration: none;
-                padding: 0.5rem 0;
-
-                    i{
-                        font-size: 1.5rem;
-                        cursor: pointer;
-                    }
-
-                    &:hover{
-                        transform: scale(1.15);
-                        transition: 0.5s;
-                        color: $Blue;
-                    }
-                }
-
-            .active{
-                color: $Blue;
-            }
+            opacity: 0;
+            animation: menu-icon-show .5s .2s forwards;
         }
+
+        .small-menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
     }
+
+    .icon{
+        color: $White;
+        text-decoration: none;
+        padding: 0.5rem 0;
+
+        i{
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        &:hover{
+            transform: scale(1.15);
+            transition: 0.5s;
+            color: $Blue;
+        }
+    }   
+
+    .margin{
+        margin: 0 1rem;
+    }
+
+    .active{
+        color: $Blue;
+    }
+
+    .menu-open{
+        animation: menu-open .8s;
+    }
+
+}
+
+@keyframes scale-up-center {
+    0% {
+        opacity: 0;
+        transform: scale(.3);}
+    50% {
+        opacity: 1;
+        transform: scale(1.05);}
+    70% { transform: scale(.9); }
+    100% { transform: scale(1); }
+
+    }
+
+@keyframes menu-open {
+    from {
+        transform: scaleX(0.3);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes menu-icon-show {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+    
 
 </style>
