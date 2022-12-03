@@ -107,7 +107,7 @@ export default {
             },
 
             dataFCard: 'Frontend',
-            dataBCard: 'Backand',
+            dataBCard: 'Backend',
 
             arrayFront: [],
             arrayBack: []
