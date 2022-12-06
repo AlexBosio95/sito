@@ -17,6 +17,7 @@
         <div class="img">
             <img :src="require('@/assets/img/' + img)" :alt="title">
         </div>
+        <img class="image-me" src="@/assets/img/project-me.png" alt="" srcset="">
     </div>
 </template>
 
@@ -59,6 +60,7 @@ export default {
         display: flex;
         justify-content: flex-end;
         background-color: $Graylight;
+        z-index: 1;
 
         .text{
             color: $White;
@@ -141,6 +143,7 @@ export default {
         animation-fill-mode: forwards;
         animation-duration: 2s;
         animation-delay: .5s;
+        z-index: 2;
 
         img{
             width: 100%;
@@ -152,6 +155,13 @@ export default {
             animation-duration: 2s;
 
         }
+    }
+
+    .image-me{
+        position: absolute;
+        top: -125px;
+        right: 200px;
+        height: 130px;
     }
 }
 
@@ -268,6 +278,10 @@ export default {
             top: -10%;
             left: 50%;
             transform: translate(-50%, 0);
+        }
+
+        .image-me{
+        display: none;
         }
     }
 

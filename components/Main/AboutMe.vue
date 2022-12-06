@@ -6,13 +6,13 @@
             :dataTitle = 'dataTitle'/>
 
             <div class="row row-cols-1 row-cols-md-2">
+
                 <div class="col d-flex justify-content-center align-items-center">
                     <BoxImage data-aos="fade-right" data-aos-duration="1500"/>
                 </div>
 
                 <div class="col">
                     <div class="box-container">
-
                         <BoxInfo v-for="(data, index) in dataBox" :key="index"
                             :title = 'data.title'
                             :logo = 'data.logo'
@@ -106,7 +106,7 @@ export default {
     .about-me{
         overflow: hidden;
         height: 100%;
-        padding-top: 2rem;
+        padding-top: 4rem;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -118,6 +118,7 @@ export default {
         }
 
         .box-container{
+            padding-top: 3rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -140,6 +141,7 @@ export default {
             .box-container{
                 justify-content: start;
                 width: 80%;
+                padding-top: 0rem;
 
                 p{
                     text-align: left;

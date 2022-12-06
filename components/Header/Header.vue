@@ -112,6 +112,7 @@ export default {
     .image-profile{
         position: absolute;
         bottom: 0rem;
+        height: 327;
 
         .bg-image{
             background: $GradientBlue;

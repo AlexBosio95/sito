@@ -91,11 +91,11 @@ export default {
 
 .menu-container{
     position: fixed;
-    z-index: 1;
     bottom: 2rem;
     left: 50%;
     transform: translate(-50%);
     text-align: center;
+    z-index: 99;
     
 
     .menu{

@@ -150,8 +150,14 @@ export default {
 
     .skills{
         height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
         .bigTitle{
+            width: 100%;
             text-align: center;
             padding: 3rem 0;
         }

@@ -1,11 +1,12 @@
 <template>
   <div @scroll.passive="isOpen = false">
       <Menu :isOpen = 'isOpen' @update:open='isOpen = $event'/>
-      <Header />
-      <Main 
+      <Header  />
+      <Main
       :myGit = 'myGit'
       :myGitRepo = 'myGitRepo'/>
       <Footer />
+
   </div>
 </template>
 
@@ -15,14 +16,11 @@ import Header from '~/components/Header/Header.vue'
 import Main from '~/components/Main/Main.vue'
 import Footer from '~/components/Footer/Footer.vue'
 import Menu from '~/components/Common/Menu.vue'
-
-
 import axios from 'axios';
 
 export default {
   name: 'IndexPage',
   components: { Footer, Header, Main, Menu },
-
   
   data: function(){
     return{
@@ -51,7 +49,8 @@ export default {
     this.getMyGithub()
   },
   mounted(){
-    window.addEventListener('scroll', this.changeOpen);
+      window.addEventListener('scroll', this.changeOpen);
+
   }
 }
 </script>

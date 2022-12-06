@@ -1,11 +1,32 @@
 <template>
     <div class="box-image">
-        <img src="@/assets/img/myprofile.png" alt="myprofile">
+        <div class="circle">
+            <img v-show="!isView" src="@/assets/img/about-me-2.png" alt="" srcset="">
+            <img v-show="isView" src="@/assets/img/about-me.png" alt="" srcset="">
+        </div>
     </div>
 </template>
 
 <script>
 export default {
+    data: function(){
+        return {
+            isView: false
+        }
+    },
+
+    methods: {
+
+        timingimage(){
+
+            setInterval(() => {
+                this.isView = !this.isView
+            }, 5000)
+        }
+    },
+    created(){
+        this.timingimage()
+    }
 
 }
 </script>
@@ -15,43 +36,47 @@ export default {
 @import '@/style/variables.scss';
 
     .box-image{
-        width: 80%;
-        margin-bottom: 2rem;
-        
-        img{
-            border-radius: 1.5rem;
-            width: 100%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+
+        .circle{
+            aspect-ratio: 1 / 1;
+            background: $GradientBlue;
+            border-radius: 50%;
+
+                img{
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: top;
+                    width: 100%;
+                    height: 100%;
+                    animation: pulse;
+                    animation-duration: .3s;
+                }
+
         }
     }
 
-    .before-enter{
+    /* we will explain what these classes do next! */
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.5s ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
         opacity: 0;
-        transform: translateY(50px);
-        transition: all 2s ease-out;
     }
 
-    .enter{
-        opacity: 1;
-        transform: translateY(0px);
-    }
 
-    @media all and (min-width: 992px) {
-
-        .box-image{
-            width: 70%;
-            margin-bottom: 0rem;
+    @keyframes new-image {
+        from {
+            transform: rotateY(0deg);
         }
-    }
-
-    .before-enter{
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: all 2s ease-out;
-    }
-
-    .enter{
-        opacity: 1;
-        transform: translateX(0px);
+        to {
+            transform: rotateY(20deg);
+        }
     }
 
 </style>
