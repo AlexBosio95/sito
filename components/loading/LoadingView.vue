@@ -100,14 +100,16 @@ export default {
 @media all and (max-width: 600px) {
 
 .loading{
+    width: 100%;
 
     .box-image{
+        width: 70%;
+        margin: auto;
 
         .circle{
 
             img{
-                max-height: 220px;
-                
+                max-height: 100%;
             }
 
         }

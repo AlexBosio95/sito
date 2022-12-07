@@ -76,6 +76,9 @@ export default {
   build: {
     vendor: ['aos']
   },
+  server: {    
+    host: '0' // default: localhost  
+  },
   plugins: [{ src: '~/plugins/aos', ssr: false}],
   css: ['aos/dist/aos.css']
 }
