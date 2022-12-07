@@ -97,4 +97,22 @@ export default {
     }
 }
 
+@media all and (max-width: 600px) {
+
+.loading{
+
+    .box-image{
+
+        .circle{
+
+            img{
+                max-height: 220px;
+                
+            }
+
+        }
+    }
+}
+}
+
 </style>
