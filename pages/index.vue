@@ -1,12 +1,16 @@
 <template>
   <div @scroll.passive="isOpen = false">
-      <Menu :isOpen = 'isOpen' @update:open='isOpen = $event'/>
-      <Header  />
-      <Main
-      :myGit = 'myGit'
-      :myGitRepo = 'myGitRepo'/>
-      <Footer />
-
+      <div v-if="isLoading">
+        <LoadingView />
+      </div>
+      <div v-else>
+        <Menu :isOpen = 'isOpen' @update:open='isOpen = $event'/>
+        <Header  />
+        <Main
+        :myGit = 'myGit'
+        :myGitRepo = 'myGitRepo'/>
+        <Footer />
+      </div>
   </div>
 </template>
 
@@ -27,6 +31,7 @@ export default {
       myGit: {},
       myGitRepo: [],
       isOpen: false,
+      isLoading: true
 
     }
   },
@@ -50,6 +55,10 @@ export default {
   },
   mounted(){
       window.addEventListener('scroll', this.changeOpen);
+
+      setTimeout(() => {
+        this.isLoading = false
+      }, 5000);
 
   }
 }
