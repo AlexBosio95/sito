@@ -30,9 +30,12 @@
 
                 </div>
 
-                <div class="image-profile " data-aos="fade-up" data-aos-duration="1500">
+                <div class="image-profile" data-aos="fade-up" data-aos-duration="1500">
                     <div class="bg-image">
                         <img src="@/assets/img/mypc.png" alt="">
+                        <div class="my-shadow"></div>
+                        <div class="desk">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,7 +123,27 @@ export default {
 
             img{
                 height: calc(100vh / 3.8);
-                margin: 1rem 2rem 6.5rem 2rem;
+                margin: 1rem 2rem 0rem 2rem;
+            }
+
+            .my-shadow{
+                position: absolute;
+                width: 50%;
+                bottom: 4rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                height: 3rem;
+                background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 120%);
+                overflow: hidden;
+            }
+
+            .desk{
+                width: 80%;
+                margin: 0 auto;
+                background: $GradientBrown;
+                height: 7rem;
+                border-radius: .3rem .3rem 0 0;
+                
             }
         }
 
@@ -143,9 +166,6 @@ export default {
             transform: scale(1.05);
             transition: .5s ease-in-out;
         }
-
-
-
     }
 
     .social{

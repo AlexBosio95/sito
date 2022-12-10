@@ -30,7 +30,7 @@ export default {
                     description: this.$t('Projects.ProjectDescriptionOne'),
                     img: 'Garagefinder.png',
                     active: true,
-                    link: ''
+                    link: 'https://github.com/AlexBosio95/GarageFinalProject'
                 },
                 {
                     id: 1,
@@ -38,7 +38,7 @@ export default {
                     description: this.$t('Projects.ProjectDescriptionTwo'),
                     img: 'AvadaCharity.jpg',
                     active: false,
-                    link: ''
+                    link: 'https://github.com/AlexBosio95/proj-html-vuejs'
                 },
                 {
                     id: 2,
@@ -46,7 +46,7 @@ export default {
                     description: this.$t('Projects.ProjectDescriptionThree'),
                     img: 'Boolflix.jpg',
                     active: false,
-                    link: ''
+                    link: 'https://github.com/AlexBosio95/vue-boolflix'
                 },
                 {
                     id: 3,
@@ -54,7 +54,7 @@ export default {
                     description: this.$t('Projects.ProjectDescriptionFour'),
                     img: 'Boolzap.jpg',
                     active: false,
-                    link: ''
+                    link: 'https://github.com/AlexBosio95/vue-boolzapp'
                 }
             ]
         }

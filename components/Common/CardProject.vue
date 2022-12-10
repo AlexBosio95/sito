@@ -4,7 +4,7 @@
             <div class="text">
                 <h5 class="title">{{title}}</h5>
                 <p class="description">{{description}}</p>
-                <button class="button-project">View Code</button>
+                <a target="_blank" class="button-project" :href="link">View Code</a>
             </div>
             <div class="slider">
                 <div class="circle" 
@@ -90,6 +90,8 @@ export default {
                 padding: .5rem 1rem;
                 border-radius: 1.5rem;
                 text-transform: uppercase;
+                text-decoration: none;
+                text-align: center;
 
                 &:hover{
                     transform: scale(1.05);

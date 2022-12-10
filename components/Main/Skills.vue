@@ -141,7 +141,7 @@ export default {
 
         .bigTitle{
             text-align: center;
-            padding: 3rem 0;
+            padding: 3rem 0 0 0;
         }
 
     }
@@ -158,7 +158,6 @@ export default {
 
         .bigTitle{
             width: 100%;
-            text-align: center;
             padding: 3rem 0;
         }
 

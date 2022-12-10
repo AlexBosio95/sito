@@ -17,4 +17,12 @@ export default {
 
 <style scoped lang="scss">
 
+@import '@/style/variables.scss';
+
+footer{
+    background-color: $GrayStrongXL;
+    height: 100%;
+    border-radius: 4rem 4rem 0 0;
+}
+
 </style>

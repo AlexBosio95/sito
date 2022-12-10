@@ -6,7 +6,7 @@
       <div v-else>
         <Menu :isOpen = 'isOpen' @update:open='isOpen = $event'/>
         <Header  />
-        <Main
+        <Main ref="main"
         :myGit = 'myGit'
         :myGitRepo = 'myGitRepo'/>
         <Footer />
@@ -47,7 +47,7 @@ export default {
     },
     changeOpen(){
       this.isOpen = false
-    }
+    },
     
   },
   created(){
@@ -59,7 +59,6 @@ export default {
       setTimeout(() => {
         this.isLoading = false
       }, 5000);
-
   }
 }
 </script>

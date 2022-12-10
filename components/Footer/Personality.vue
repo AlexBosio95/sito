@@ -1,6 +1,5 @@
 <template>
 <div class="container">
-
     <div class="contacts">
         <div class="padding-container">
             <TitleSection class="title-section"
@@ -11,6 +10,9 @@
                 :data = 'data' 
                 data-aos="fade-up" data-aos-duration="1800"/>
             </div>
+        </div>
+        <div class="powered">
+            <span>Powered by Alex Bosio</span>
         </div>
     </div>
 </div>
@@ -82,20 +84,27 @@ export default {
     .title-section{
         text-align: center;
         margin-bottom: 2rem;
+        padding-top: 2rem;
     }
 
     .padding-container{
-        padding-bottom: 8rem;
+        padding-bottom: 5rem;
     }
-
 }
+
+.powered{
+    text-align: center;
+    color: $Graylight;
+    padding-bottom: 2rem;
+}
+
 
     @media all and (min-width: 992px) {
         .contacts{
             height: 100vh;
 
             .title-section{
-                margin-bottom: 4rem;
+                margin-bottom: 2rem;
             }
 
             .padding-container{

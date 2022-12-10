@@ -68,4 +68,11 @@ export default {
         }
     }
 
+@media all and (max-width: 600px) {
+
+    .box-image{
+        width: 70%;
+    }
+}
+
 </style>
