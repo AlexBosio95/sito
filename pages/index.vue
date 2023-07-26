@@ -1,16 +1,11 @@
 <template>
   <div @scroll.passive="isOpen = false">
-      <div v-if="isLoading">
-        <LoadingView />
-      </div>
-      <div v-else>
-        <Menu :isOpen = 'isOpen' @update:open='isOpen = $event'/>
-        <Header  />
-        <Main ref="main"
-        :myGit = 'myGit'
-        :myGitRepo = 'myGitRepo'/>
-        <Footer />
-      </div>
+      <Menu :isOpen = 'isOpen' @update:open='isOpen = $event'/>
+      <Header  />
+      <Main ref="main"
+      :myGit = 'myGit'
+      :myGitRepo = 'myGitRepo'/>
+      <Footer />
   </div>
 </template>
 
