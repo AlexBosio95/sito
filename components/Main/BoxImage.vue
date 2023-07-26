@@ -1,32 +1,13 @@
 <template>
     <div class="box-image">
-        <div class="circle">
-            <img v-show="!isView" src="@/assets/img/about-me-2.png" alt="" srcset="">
-            <img v-show="isView" src="@/assets/img/about-me.png" alt="" srcset="">
+        <div class="square">
+            <img src="@/assets/img/profile.JPG" alt="" srcset="">
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    data: function(){
-        return {
-            isView: false
-        }
-    },
-
-    methods: {
-
-        timingimage(){
-
-            setInterval(() => {
-                this.isView = !this.isView
-            }, 5000)
-        }
-    },
-    created(){
-        this.timingimage()
-    }
 
 }
 </script>
@@ -40,19 +21,17 @@ export default {
         height: 100%;
         overflow: hidden;
 
-        .circle{
+        .square{
             aspect-ratio: 1 / 1;
             background: $GradientBlue;
-            border-radius: 50%;
+            border-radius: 5%;
 
                 img{
-                    border-radius: 50%;
+                    border-radius: 5%;
                     object-fit: cover;
-                    object-position: top;
+                    object-position: center;
                     width: 100%;
                     height: 100%;
-                    animation: pulse;
-                    animation-duration: .3s;
                 }
 
         }

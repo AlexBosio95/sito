@@ -34,7 +34,7 @@ export default {
                     title: 'PHP',
                     type: 'Language',
                     imgUrl: 'fa-brands fa-php',
-                    group: 'Boolean s.r.l.'
+                    group: 'Backend'
                 },
 
                 {
@@ -66,7 +66,7 @@ export default {
                     title: 'MySQL',
                     type: 'Language',
                     imgUrl: 'fa-solid fa-database',
-                    group: 'Boolean s.r.l.'
+                    group: 'Backend'
                 },
 
                 {
@@ -90,7 +90,7 @@ export default {
                     title: 'Laravel',
                     type: 'Framework',
                     imgUrl: 'fa-brands fa-laravel',
-                    group: 'Boolean s.r.l.'
+                    group: 'Backend'
                 },
 
                 {
@@ -99,6 +99,35 @@ export default {
                     type: 'Library',
                     imgUrl: 'fa-brands fa-bootstrap',
                     group: 'Frontend'
+                },
+
+                {
+                    id: 9,
+                    title: 'Docker',
+                    type: 'Software',
+                    imgUrl: 'fa-brands fa-docker',
+                    group: 'Backend'
+                },
+                {
+                    id: 10,
+                    title: 'PHPStorm',
+                    type: 'IDE',
+                    imgUrl: 'fa-solid fa-rocket',
+                    group: 'Backend'
+                },
+                {
+                    id: 11,
+                    title: 'Golang',
+                    type: 'Language',
+                    imgUrl: 'fa-brands fa-golang',
+                    group: 'Backend'
+                },
+                {
+                    id: 11,
+                    title: 'Github',
+                    type: 'Software',
+                    imgUrl: 'fa-brands fa-github',
+                    group: 'Backend'
                 },
             ],
             dataTitle:{
