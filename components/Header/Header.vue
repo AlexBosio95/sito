@@ -30,7 +30,9 @@
 
                 </div>
 
-                <div class="image-profile" data-aos="fade-up" data-aos-duration="1500">
+
+                
+                <div v-if="!isOpen" class="image-profile" data-aos="fade-up" data-aos-duration="1500">
                     <div class="bg-image">
                         <img src="@/assets/img/mypc.png" alt="">
                         <div class="my-shadow"></div>
@@ -38,6 +40,18 @@
                         </div>
                     </div>
                 </div>
+            
+
+            <transition name="fade">
+                <div v-if="isOpen" class="image-profile">
+                    <div class="bg-image-close">
+                        <img src="@/assets/img/about-me-2.png" alt="">
+                        <div class="my-shadow"></div>
+                        <div class="desk">
+                        </div>
+                    </div>
+                </div>
+            </transition>
             </div>
 
             <Social class="social"/>
@@ -67,6 +81,7 @@ export default {
 
     props:{
         dataMenu : Array,
+        isOpen: false,
     },
     data: function(){
         return{
@@ -85,7 +100,27 @@ export default {
                 }
             ],
         }
-    }
+    },
+        mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+        },
+        beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+        },
+        methods: {
+        handleScroll() {
+            // Verifica la posizione dello scroll
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Imposta isOpen a true se lo scroll è in una determinata posizione
+            this.isOpen = scrollTop > 20; // Ad esempio, impostiamo isOpen a true se lo scroll è oltre i 100 pixel dalla parte superiore
+            
+            // Imposta isOpen a false se lo scroll è tornato in cima
+            if (scrollTop === 0) {
+            this.isOpen = false;
+            }
+        },
+        },
 }
 </script>
 
@@ -135,6 +170,11 @@ export default {
                 height: 3rem;
                 background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 120%);
                 overflow: hidden;
+                opacity: 0;
+                animation-name: scale-up-center;
+                animation-duration: 2s;
+                animation-delay: 2s;
+                animation-fill-mode: forwards;
             }
 
             .desk{
@@ -144,6 +184,40 @@ export default {
                 height: 7rem;
                 border-radius: .3rem .3rem 0 0;
                 
+            }
+        }
+
+        .bg-image-close{
+            background: $GradientBlue;
+            border-radius: 9rem;
+            animation: fadeOut 0.2s, bounce 0.3s;
+            animation-delay: .2s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            
+
+            img{
+                height: calc(100vh / 3.8);
+                margin: 2rem 2rem 2rem 2rem;
+            }
+        }
+
+
+        @keyframes fadeOut {
+            from {
+                opacity: .8;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
             }
         }
 
@@ -178,6 +252,7 @@ export default {
     }
 
 }
+    
 
 @keyframes scale-up-center {
 
@@ -206,6 +281,7 @@ export default {
         }
 
     }
+
 
 
 
