@@ -14,7 +14,7 @@
             <div class="text-center d-flex justify-content-center">
                 <div class="box-text">
                     <h6 data-aos="fade-up" data-aos-duration="800">{{$t('header.topTitle')}}</h6>
-                    <h1 data-aos="fade-up" data-aos-duration="1000" class="fw-bold">{{$t('header.title')}}</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="1000" >{{$t('header.title')}}</h1>
                     <p data-aos="fade-up" data-aos-duration="1200">{{$t('header.subTitle')}}</p>
 
                     <div class="d-flex justify-content-center">
@@ -25,33 +25,30 @@
                         
                         data-aos="fade-up" data-aos-duration="1800"
                         />
-
                     </div>
-
                 </div>
 
-
-                
-                <div v-if="!isOpen" class="image-profile" data-aos="fade-up" data-aos-duration="1500">
+                <div v-if="!isOpen" class="image-profile">
                     <div class="bg-image">
                         <img src="@/assets/img/mypc.png" alt="">
+                        <div class="light" :class="{ 'light-on': isLightOn, 'light-off': !isLightOn }"></div>
                         <div class="my-shadow"></div>
                         <div class="desk">
                         </div>
                     </div>
                 </div>
-            
 
-            <transition name="fade">
-                <div v-if="isOpen" class="image-profile">
-                    <div class="bg-image-close">
-                        <img src="@/assets/img/about-me-2.png" alt="">
-                        <div class="my-shadow"></div>
-                        <div class="desk">
+                <transition name="fade">
+                    <div v-if="isOpen" class="image-profile">
+                        <div class="bg-image-close">
+                            <img src="@/assets/img/mypc.png" alt="">
+                            <div class="light" :class="{ 'light-on': isLightOn, 'light-off': !isLightOn }"></div>
+                            <div class="my-shadow"></div>
+                            <div class="desk">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </transition>
+                </transition>
             </div>
 
             <Social class="social"/>
@@ -99,16 +96,20 @@ export default {
                 url: '#about-me',
                 }
             ],
+
+            isLightOn: false,
         }
     },
         mounted() {
-        window.addEventListener('scroll', this.handleScroll);
+            window.addEventListener('scroll', this.handleScroll);
+            this.startAnimation();
         },
         beforeDestroy() {
-        window.removeEventListener('scroll', this.handleScroll);
+            window.removeEventListener('scroll', this.handleScroll);
+            this.stopAnimation();
         },
         methods: {
-        handleScroll() {
+            handleScroll() {
             // Verifica la posizione dello scroll
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
@@ -120,6 +121,14 @@ export default {
             this.isOpen = false;
             }
         },
+        startAnimation() {
+            this.intervalId = setInterval(() => {
+                this.isLightOn = !this.isLightOn;
+            }, 500); 
+            },
+            stopAnimation() {
+                clearInterval(this.intervalId);
+            },
         },
 }
 </script>
@@ -155,6 +164,9 @@ export default {
         .bg-image{
             background: $GradientBlue;
             border-radius: 9rem 9rem 0 0;
+            animation-name: fadeToUp;
+            animation-duration: 1.7s;
+            animation-fill-mode: forwards;
 
             img{
                 height: calc(100vh / 3.8);
@@ -183,25 +195,61 @@ export default {
                 background: $GradientBrown;
                 height: 7rem;
                 border-radius: .3rem .3rem 0 0;
-                
             }
         }
 
         .bg-image-close{
             background: $GradientBlue;
-            border-radius: 9rem;
-            animation: fadeOut 0.2s, bounce 0.3s;
-            animation-delay: .2s;
-            animation-fill-mode: forwards;
-            opacity: 0;
-            
+            border-radius: 9rem 9rem;
 
             img{
                 height: calc(100vh / 3.8);
-                margin: 2rem 2rem 2rem 2rem;
+                margin: 1rem 2rem 0rem 2rem;
+            }
+
+            .my-shadow{
+                position: absolute;
+                width: 50%;
+                bottom: 4rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                height: 3rem;
+                background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 120%);
+                overflow: hidden;
+            }
+
+            .desk{
+                width: 80%;
+                margin: 0 auto;
+                background: $GradientBrown;
+                height: 7rem;
+                border-radius: 1rem 1rem ;
+                
             }
         }
 
+        .light{
+            position: absolute;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+            width: 45%;
+            left: 50%;
+            transform: translate(-50%, -250%);
+            height: 3rem;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 60%);
+            overflow: hidden;
+            opacity: 0;
+            animation-duration: 1s;
+        }
+
+        .light-on {
+            animation-name: lighton;
+            animation-fill-mode: forwards;
+        }
+
+        .light-off {
+            animation-name: lightoff;
+            animation-fill-mode: forwards;
+        }
 
         @keyframes fadeOut {
             from {
@@ -218,6 +266,24 @@ export default {
             }
             50% {
                 transform: scale(1.1);
+            }
+        }
+
+        @keyframes lighton {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes lightoff {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
             }
         }
 
@@ -253,6 +319,16 @@ export default {
 
 }
     
+@keyframes fadeToUp {
+    from {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
 
 @keyframes scale-up-center {
 
@@ -281,8 +357,4 @@ export default {
         }
 
     }
-
-
-
-
 </style>
