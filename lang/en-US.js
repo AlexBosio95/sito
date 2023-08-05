@@ -51,8 +51,8 @@ export default{
 
     footer: {
 
-        title: 'I\'m a Supporter',
-        subTitle: 'My personality',
+        title: 'Certificates',
+        subTitle: 'Study',
         
         MindTitle: 'Mind',
         MindElementLeft: 'Introverted',
@@ -73,6 +73,8 @@ export default{
         IdentityTitle: 'Identity',
         IdentityElementLeft: 'Assertive',
         IdentityElementRight: 'Turbulent',
+
+        cardTitle: 'Incoming Additional Certificates'
     }
     
 }

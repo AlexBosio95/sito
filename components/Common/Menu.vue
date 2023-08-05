@@ -56,10 +56,10 @@ export default {
                 },
 
                 {
-                    text: 'personality',
+                    text: 'certification',
                     active: false,
-                    logo: 'fa-solid fa-chart-bar',
-                    link: '#personality',
+                    logo: 'fa-solid fa-graduation-cap',
+                    link: '#certification',
                 },
             ],
             Open: false,

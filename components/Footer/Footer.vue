@@ -1,16 +1,16 @@
 <template>
     <footer>
-        <Personality id="personality"/>
+        <Certification id="certification"/>
     </footer>
 </template>
 
 <script>
-import Personality from './Personality.vue';
+import Certification from './Certification.vue';
 
 export default {
 
     components:{
-        Personality,
+        Certification,
     }
 }
 </script>
@@ -22,7 +22,7 @@ export default {
 footer{
     background-color: $GrayStrongXL;
     height: 100%;
-    border-radius: 4rem 4rem 0 0;
+    border-radius: 2rem 2rem 0 0;
 }
 
 </style>

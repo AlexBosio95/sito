@@ -51,8 +51,8 @@ export default{
 
     footer: {
 
-        title: 'Sostenitore',
-        subTitle: 'Personalità',
+        title: 'Certificazioni',
+        subTitle: 'Certificati ottenuti',
         
         MindTitle: 'Mente',
         MindElementLeft: 'Introverso',
@@ -73,6 +73,8 @@ export default{
         IdentityTitle: 'Identità',
         IdentityElementLeft: 'Assertivo',
         IdentityElementRight: 'Turbolento',
+
+        cardTitle: 'Prossimi Certificati in uscita'
     }
 
 }
