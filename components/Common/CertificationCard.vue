@@ -3,7 +3,7 @@
         <a
             v-for="(card, index) in cards"
             :key="index"
-            :style="{ '--background-url': `url(${card.imageUrl})` }"
+            :style="{ '--background-url': `url(${card.imageUrl})`}"
             class="card"
             ref="card"
             @mouseenter="handleMouseEnter(index)"
@@ -101,6 +101,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 @import "@/style/variables.scss";
 
 .container-card{
