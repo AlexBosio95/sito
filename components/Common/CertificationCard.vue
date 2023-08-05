@@ -39,7 +39,7 @@ export default {
                 id: 2, 
                 imageUrl: card2Image, 
                 standard: false,
-                buttonLink: 'https://www.udemy.com/certificate/UC-c304a1ff-d209-48d8-a253-617d4d22cab3/',
+                buttonLink: 'https://www.udemy.com/certificate/UC-c304a1ff-d209-48d8-a253-617d4d22cab3',
                 buttonTarget: '_blank'
                 },
                 { 
@@ -150,7 +150,6 @@ export default {
         position: relative;
 
         .text-card{
-            font-family: 'Paytone One', sans-serif;
             color: $GrayStrongXL;
             font-size: 2rem;
             position: absolute;
