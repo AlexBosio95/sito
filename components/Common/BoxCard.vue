@@ -52,7 +52,6 @@ export default {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-
         }
 
         .title{
@@ -70,18 +69,6 @@ export default {
             font-family: 'Inconsolata', monospace;
         }
     }
-
-    .before-enter{
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 1s ease-out;
-    }
-
-    .enter{
-        opacity: 1;
-        transform: translateY(0px);
-    }
-    
 
     @media all and (min-width: 992px) {
 

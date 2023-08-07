@@ -50,10 +50,16 @@ export default {
         opacity: 0.5;
     }
 
+    &:hover{
+        transition-duration: 150ms;
+        box-shadow: 0 4px 20px 3px #00000044;
+    }
+
     &:hover .circle{
         background-color: $Blue;
         transform: scale(1.15);
         transition: 1s;
+        box-shadow: 0 2px 6px 2px #00000044;
     }
 
     .circle{
