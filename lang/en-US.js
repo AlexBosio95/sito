@@ -22,7 +22,7 @@ export default{
         BoxTwoTitle: 'Projects',
         BoxTwoData: 'Github',
         BoxThreeTitle: 'Study',
-        BoxThreeData: 'Boolean Certificate',
+        BoxThreeData: 'Boolean',
 
         //Button
         ButtonText: 'My Skills',

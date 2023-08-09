@@ -22,7 +22,7 @@ export default{
         BoxTwoTitle: 'Progetti',
         BoxTwoData: 'Github',
         BoxThreeTitle: 'Formazione',
-        BoxThreeData: 'Certificato Boolean',
+        BoxThreeData: 'Boolean',
 
         //Button
         ButtonText: 'Competenze',

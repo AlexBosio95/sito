@@ -59,26 +59,14 @@ export default {
         }
     }
 
-    .before-enter{
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 2s ease-out;
-    }
-
-    .enter{
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
     @media all and (min-width: 992px) {
         .box{
             width: calc(100% / 3 - 1rem);
             margin: .5rem;
             background-color: $Graylight;
-            padding: .8rem;
             text-align: center;
             border-radius: .5rem;
-
+        
             i{
                 padding: .8rem;
                 font-size: 1.3rem;
@@ -95,17 +83,6 @@ export default {
                 opacity: 0.5;
             }
         }
-
-    .before-enter{
-        opacity: 0;
-        transform: translateX(50px);
-        transition: all 2s ease-out;
-    }
-
-    .enter{
-        opacity: 1;
-        transform: translateX(0px);
-    }
     
     }
 

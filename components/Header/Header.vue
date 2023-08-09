@@ -124,11 +124,11 @@ export default {
         startAnimation() {
             this.intervalId = setInterval(() => {
                 this.isLightOn = !this.isLightOn;
-            }, 500); 
-            },
-            stopAnimation() {
-                clearInterval(this.intervalId);
-            },
+        }, 500); 
+        },
+        stopAnimation() {
+            clearInterval(this.intervalId);
+        },
         },
 }
 </script>

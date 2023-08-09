@@ -12,34 +12,31 @@
                 </div>
 
                 <div class="col">
-                    <div class="box-container">
+                    <div class="box-container" >
                         <BoxInfo v-for="(data, index) in dataBox" :key="index"
                             :title = 'data.title'
                             :logo = 'data.logo'
                             :data=  "data.data"
                             :myGit = 'myGit'
-
-                            data-aos="fade-left" data-aos-duration="1500"
+                            :class="isvisible ? 'animation-left' : 'animation-left-off'"
                         />
-
-                        <Paragraf
-                            :dataParagraf = 'dataParagraf'
-                            data-aos="fade-up" data-aos-duration="800"/>
 
                         <SquareButton v-for="button in ButtonData" :key="button.id"
                             :text= 'button.text'
                             :type= 'button.type'
                             :url= 'button.url'
-
-                            data-aos="fade-up" data-aos-duration="800"
+                            :class="isvisible ? 'animation-up' : 'animation-up-off'"
+                            class="button"
                         />
+                        <Paragraf
+                            :dataParagraf = 'dataParagraf'
+                            :class="isvisible ? 'animation-up' : 'animation-up-off'"
+                            v-if="isvisible"
+                        />
+                    </div>
                 </div>
-            </div>
-        </div>      
-    </div>
-
-
-        
+            </div>      
+        </div>
     </div>
 </template>
 
@@ -52,6 +49,7 @@ import Paragraf from '../Common/Paragraf.vue'
 
 export default {
     components: { BoxInfo, SquareButton, TitleSection, BoxImage, Paragraf },
+    props:{myGit: Object},
     data: function(){
         return{
             dataBox:[
@@ -86,15 +84,31 @@ export default {
                 subtitle: this.$t('aboutMe.subTitle')
             },
 
-            dataParagraf: this.$t('aboutMe.dataParagraf')
+            dataParagraf: this.$t('aboutMe.dataParagraf'),
+            isvisible: true
 
         }
     },
-
-    props:{
-        myGit: Object,
-    }
-
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+        // Verifica la posizione dello scroll
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Imposta isOpen a true se lo scroll è in una determinata posizione
+        this.isvisible = scrollTop > 600; // Ad esempio, impostiamo isOpen a true se lo scroll è oltre i 100 pixel dalla parte superiore
+        
+        // Imposta isOpen a false se lo scroll è tornato in cima
+            if (scrollTop === 0) {
+            this.isvisible = false;
+            }
+        }
+    },
 }
 </script>
 
@@ -104,52 +118,129 @@ export default {
 @import '@/style/variables.scss';
 
     .about-me{
-        overflow: hidden;
-        height: 100%;
-        padding-top: 4rem;
+    overflow: hidden;
+    height: 100%;
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .title-section{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .box-container{
+        padding-top: 3rem;
         display: flex;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        justify-content: center;
+        width: 100%;
+    }
+
+    .animation-up{
+        animation-name: fadeOut;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        animation-duration: 1s;
+        animation-delay: .5s;
+    }
+
+    .animation-up-off{
+        animation-name: fadeOutOff;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-delay: .5s;
+    }
+
+    .animation-left{
+        animation-name: fadeLeft;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        animation-duration: 1s;
+        animation-delay: .5s;
+    }
+
+    .animation-left-off{
+        animation-name: fadeLeftOff;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-delay: .5s;
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes fadeOutOff {
+        from {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    }
+
+    @keyframes fadeLeft {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes fadeLeftOff {
+        from {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+    }
+
+    .button{
+        text-align: center;
+        margin: .5rem 0;
+    }
+}
+
+
+@media all and (min-width: 992px) {
+    .about-me{
+        padding-top: 0rem;
+        height: 100vh;
 
         .title-section{
-            text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
         }
 
         .box-container{
-            padding-top: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 100%;
+            justify-content: start;
+            width: 80%;
+            padding-top: 0rem;
 
+            p{
+                text-align: left;
+            }
         }
     }
 
-
-    @media all and (min-width: 992px) {
-        .about-me{
-            padding-top: 0rem;
-            height: 100vh;
-
-            .title-section{
-                margin-bottom: 4rem;
-            }
-
-            .box-container{
-                justify-content: start;
-                width: 80%;
-                padding-top: 0rem;
-
-                p{
-                    text-align: left;
-                }
-            }
-    }
-
-
-    }
+}
 
 </style>
